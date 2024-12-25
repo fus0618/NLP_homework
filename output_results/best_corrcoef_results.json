@@ -1,0 +1,14 @@
+{
+    "Linear": {
+        "best_corrcoef": 0.6611,
+        "teacher_weight": "0.05"
+    },
+    "PCA": {
+        "best_corrcoef": 0.6518,
+        "teacher_weight": "0.05"
+    },
+    "Direct": {
+        "best_corrcoef": 0.6523,
+        "teacher_weight": "0.08"
+    }
+}

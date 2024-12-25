@@ -1,5 +1,3 @@
-# reference: https://github.com/vdogmcgee/SimCSE-Chinese-Pytorch
-
 import sys
 import argparse
 
