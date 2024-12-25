@@ -1,0 +1,162 @@
+F:\Anaconda\envs\pytorch\python.exe F:/NLP大作业/SimCSE-Pytorch-master/ESimCSE/tongyi_distill_train.py
+2024-12-24 19:39:47.818 | INFO     | __main__:<module>:499 - Starting training process with knowledge distillation from Tongyi embeddings.
+2024-12-24 19:39:47.818 | INFO     | __main__:<module>:500 - Namespace(batch_size=16, data_path='../data/STS-B/', device='cuda:0', dropout=0.15, dup_rate=0.15, lr=3e-05, max_length=50, pooler='first-last-avg', pretrain_model_path='F:\\models\\bert-base-chinese', q_size=64, save_path='./model_save', teacher_save_path='./tongyi_embeddings.json')
+Using cuda:0 device.
+
+2024-12-24 19:39:48.112 | INFO     | __main__:<module>:505 - Test Embeddings长度: 1024
+2024-12-24 19:39:48.138 | INFO     | __main__:main:424 - Generating/updating embeddings...
+2024-12-24 19:39:51.348 | INFO     | __main__:generate_teacher_embeddings:166 - Total sentences: 10462, Remaining to embed: 0
+Generating embeddings: 0it [00:00, ?it/s]
+2024-12-24 19:39:51.350 | INFO     | __main__:generate_teacher_embeddings:193 - Embedding generation completed. Saved to ./tongyi_embeddings.json
+original_dim: 1024
+PCA: n_components: 768
+2024-12-24 19:39:55.622 | INFO     | __main__:train_with_distillation:322 - Applying PCA to teacher embeddings...
+Training:   0%|          | 0/654 [00:00<?, ?it/s]F:\Anaconda\envs\pytorch\lib\site-packages\transformers\models\bert\modeling_bert.py:440: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+Training:   0%|          | 3/654 [00:53<2:30:45, 13.90s/it]2024-12-24 19:40:50.028 | INFO     | __main__:train_with_distillation:358 - Batch 5/654 - loss: 0.0993
+Training:   0%|          | 3/654 [01:05<2:30:45, 13.90s/it]2024-12-24 19:41:45.029 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.5440 at batch 5, model saved.
+Training:   1%|▏         | 9/654 [01:49<1:12:21,  6.73s/it]2024-12-24 19:41:45.967 | INFO     | __main__:train_with_distillation:358 - Batch 10/654 - loss: 0.0689
+2024-12-24 19:42:51.020 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.5896 at batch 10, model saved.
+Training:   2%|▏         | 14/654 [02:54<1:23:53,  7.86s/it]2024-12-24 19:42:51.385 | INFO     | __main__:train_with_distillation:358 - Batch 15/654 - loss: 0.0430
+Training:   2%|▏         | 14/654 [03:05<1:23:53,  7.86s/it]2024-12-24 19:43:43.721 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6028 at batch 15, model saved.
+Training:   3%|▎         | 19/654 [03:47<1:14:35,  7.05s/it]2024-12-24 19:43:44.087 | INFO     | __main__:train_with_distillation:358 - Batch 20/654 - loss: 0.0402
+Training:   3%|▎         | 19/654 [04:05<1:14:35,  7.05s/it]2024-12-24 19:44:51.053 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6098 at batch 20, model saved.
+Training:   4%|▎         | 24/654 [04:54<1:24:11,  8.02s/it]2024-12-24 19:44:51.422 | INFO     | __main__:train_with_distillation:358 - Batch 25/654 - loss: 0.0413
+Training:   4%|▎         | 24/654 [05:05<1:24:11,  8.02s/it]2024-12-24 19:45:39.950 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6111 at batch 25, model saved.
+Training:   4%|▍         | 29/654 [05:43<1:10:56,  6.81s/it]2024-12-24 19:45:40.316 | INFO     | __main__:train_with_distillation:358 - Batch 30/654 - loss: 0.0334
+Training:   5%|▌         | 33/654 [06:43<1:25:37,  8.27s/it]2024-12-24 19:46:40.104 | INFO     | __main__:train_with_distillation:358 - Batch 35/654 - loss: 0.0531
+Training:   5%|▌         | 33/654 [06:55<1:25:37,  8.27s/it]2024-12-24 19:48:02.200 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6124 at batch 35, model saved.
+Training:   6%|▌         | 39/654 [08:06<1:12:31,  7.08s/it]2024-12-24 19:48:03.142 | INFO     | __main__:train_with_distillation:358 - Batch 40/654 - loss: 0.0285
+2024-12-24 19:49:16.272 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6200 at batch 40, model saved.
+Training:   7%|▋         | 44/654 [09:20<1:28:48,  8.73s/it]2024-12-24 19:49:16.639 | INFO     | __main__:train_with_distillation:358 - Batch 45/654 - loss: 0.0257
+Training:   7%|▋         | 49/654 [10:21<1:21:34,  8.09s/it]2024-12-24 19:50:18.294 | INFO     | __main__:train_with_distillation:358 - Batch 50/654 - loss: 0.0243
+Training:   8%|▊         | 54/654 [11:34<1:28:10,  8.82s/it]2024-12-24 19:51:30.956 | INFO     | __main__:train_with_distillation:358 - Batch 55/654 - loss: 0.0203
+Training:   9%|▉         | 59/654 [12:34<1:10:51,  7.15s/it]2024-12-24 19:52:30.840 | INFO     | __main__:train_with_distillation:358 - Batch 60/654 - loss: 0.0194
+Training:  10%|▉         | 64/654 [13:57<1:11:45,  7.30s/it]2024-12-24 19:53:54.383 | INFO     | __main__:train_with_distillation:358 - Batch 65/654 - loss: 0.0166
+Training:  11%|█         | 69/654 [15:15<1:29:35,  9.19s/it]2024-12-24 19:55:11.648 | INFO     | __main__:train_with_distillation:358 - Batch 70/654 - loss: 0.0147
+Training:  11%|█▏        | 74/654 [16:12<1:15:32,  7.81s/it]2024-12-24 19:56:08.576 | INFO     | __main__:train_with_distillation:358 - Batch 75/654 - loss: 0.0129
+Training:  12%|█▏        | 79/654 [17:26<1:25:01,  8.87s/it]2024-12-24 19:57:22.973 | INFO     | __main__:train_with_distillation:358 - Batch 80/654 - loss: 0.0131
+Training:  13%|█▎        | 84/654 [18:35<1:22:59,  8.74s/it]2024-12-24 19:58:31.573 | INFO     | __main__:train_with_distillation:358 - Batch 85/654 - loss: 0.0118
+Training:  13%|█▎        | 88/654 [19:59<1:46:47, 11.32s/it]2024-12-24 19:59:55.847 | INFO     | __main__:train_with_distillation:358 - Batch 90/654 - loss: 0.0111
+Training:  14%|█▍        | 94/654 [21:29<1:16:48,  8.23s/it]2024-12-24 20:01:26.477 | INFO     | __main__:train_with_distillation:358 - Batch 95/654 - loss: 0.0095
+Training:  15%|█▌        | 99/654 [22:32<1:13:51,  7.98s/it]2024-12-24 20:02:28.826 | INFO     | __main__:train_with_distillation:358 - Batch 100/654 - loss: 0.0081
+Training:  16%|█▌        | 104/654 [23:35<1:13:21,  8.00s/it]2024-12-24 20:03:32.196 | INFO     | __main__:train_with_distillation:358 - Batch 105/654 - loss: 0.0074
+Training:  17%|█▋        | 109/654 [24:31<1:07:04,  7.38s/it]2024-12-24 20:04:28.163 | INFO     | __main__:train_with_distillation:358 - Batch 110/654 - loss: 0.0067
+Training:  17%|█▋        | 114/654 [25:48<1:12:00,  8.00s/it]2024-12-24 20:05:45.450 | INFO     | __main__:train_with_distillation:358 - Batch 115/654 - loss: 0.0063
+Training:  18%|█▊        | 119/654 [27:17<1:09:47,  7.83s/it]2024-12-24 20:07:14.048 | INFO     | __main__:train_with_distillation:358 - Batch 120/654 - loss: 0.0058
+Training:  19%|█▉        | 124/654 [28:26<1:15:10,  8.51s/it]2024-12-24 20:08:22.939 | INFO     | __main__:train_with_distillation:358 - Batch 125/654 - loss: 0.0054
+Training:  20%|█▉        | 129/654 [29:44<1:22:15,  9.40s/it]2024-12-24 20:09:40.530 | INFO     | __main__:train_with_distillation:358 - Batch 130/654 - loss: 0.0058
+Training:  20%|██        | 134/654 [30:41<1:09:10,  7.98s/it]2024-12-24 20:10:38.087 | INFO     | __main__:train_with_distillation:358 - Batch 135/654 - loss: 0.0049
+Training:  21%|██▏       | 139/654 [31:58<1:09:58,  8.15s/it]2024-12-24 20:11:54.976 | INFO     | __main__:train_with_distillation:358 - Batch 140/654 - loss: 0.0039
+Training:  22%|██▏       | 144/654 [33:25<1:05:46,  7.74s/it]2024-12-24 20:13:21.775 | INFO     | __main__:train_with_distillation:358 - Batch 145/654 - loss: 0.0040
+Training:  23%|██▎       | 149/654 [34:32<1:09:56,  8.31s/it]2024-12-24 20:14:28.818 | INFO     | __main__:train_with_distillation:358 - Batch 150/654 - loss: 0.0042
+Training:  24%|██▎       | 154/654 [35:42<1:12:18,  8.68s/it]2024-12-24 20:15:38.818 | INFO     | __main__:train_with_distillation:358 - Batch 155/654 - loss: 0.0033
+Training:  24%|██▍       | 159/654 [36:47<1:09:17,  8.40s/it]2024-12-24 20:16:44.191 | INFO     | __main__:train_with_distillation:358 - Batch 160/654 - loss: 0.0067
+Training:  25%|██▌       | 164/654 [38:04<1:07:32,  8.27s/it]2024-12-24 20:18:01.005 | INFO     | __main__:train_with_distillation:358 - Batch 165/654 - loss: 0.0034
+Training:  26%|██▌       | 169/654 [39:37<1:06:25,  8.22s/it]2024-12-24 20:19:34.469 | INFO     | __main__:train_with_distillation:358 - Batch 170/654 - loss: 0.0033
+Training:  27%|██▋       | 174/654 [40:56<1:16:19,  9.54s/it]2024-12-24 20:20:53.131 | INFO     | __main__:train_with_distillation:358 - Batch 175/654 - loss: 0.0037
+Training:  27%|██▋       | 179/654 [42:05<1:10:48,  8.94s/it]2024-12-24 20:22:01.771 | INFO     | __main__:train_with_distillation:358 - Batch 180/654 - loss: 0.0047
+Training:  28%|██▊       | 184/654 [43:20<1:12:59,  9.32s/it]2024-12-24 20:23:17.008 | INFO     | __main__:train_with_distillation:358 - Batch 185/654 - loss: 0.0044
+Training:  29%|██▉       | 189/654 [44:33<1:04:08,  8.28s/it]2024-12-24 20:24:30.101 | INFO     | __main__:train_with_distillation:358 - Batch 190/654 - loss: 0.0045
+Training:  30%|██▉       | 194/654 [46:09<1:04:10,  8.37s/it]2024-12-24 20:26:05.873 | INFO     | __main__:train_with_distillation:358 - Batch 195/654 - loss: 0.0055
+Training:  30%|███       | 199/654 [47:32<1:16:04, 10.03s/it]2024-12-24 20:27:29.270 | INFO     | __main__:train_with_distillation:358 - Batch 200/654 - loss: 0.0047
+Training:  31%|███       | 204/654 [48:44<1:10:06,  9.35s/it]2024-12-24 20:28:40.832 | INFO     | __main__:train_with_distillation:358 - Batch 205/654 - loss: 0.0041
+Training:  32%|███▏      | 209/654 [49:59<1:10:02,  9.44s/it]2024-12-24 20:29:55.979 | INFO     | __main__:train_with_distillation:358 - Batch 210/654 - loss: 0.0047
+Training:  33%|███▎      | 213/654 [51:14<1:19:10, 10.77s/it]2024-12-24 20:31:11.450 | INFO     | __main__:train_with_distillation:358 - Batch 215/654 - loss: 0.0038
+Training:  33%|███▎      | 219/654 [52:52<1:01:47,  8.52s/it]2024-12-24 20:32:48.809 | INFO     | __main__:train_with_distillation:358 - Batch 220/654 - loss: 0.0039
+Training:  34%|███▍      | 224/654 [54:17<1:13:05, 10.20s/it]2024-12-24 20:34:13.964 | INFO     | __main__:train_with_distillation:358 - Batch 225/654 - loss: 0.0038
+Training:  35%|███▌      | 229/654 [55:25<1:04:23,  9.09s/it]2024-12-24 20:35:21.873 | INFO     | __main__:train_with_distillation:358 - Batch 230/654 - loss: 0.0032
+Training:  36%|███▌      | 234/654 [56:46<1:08:43,  9.82s/it]2024-12-24 20:36:42.519 | INFO     | __main__:train_with_distillation:358 - Batch 235/654 - loss: 0.0069
+Training:  36%|███▋      | 238/654 [58:01<1:15:48, 10.93s/it]2024-12-24 20:37:58.153 | INFO     | __main__:train_with_distillation:358 - Batch 240/654 - loss: 0.0054
+Training:  37%|███▋      | 244/654 [59:39<58:33,  8.57s/it]  2024-12-24 20:39:35.689 | INFO     | __main__:train_with_distillation:358 - Batch 245/654 - loss: 0.0050
+Training:  38%|███▊      | 249/654 [1:00:58<1:05:20,  9.68s/it]2024-12-24 20:40:55.176 | INFO     | __main__:train_with_distillation:358 - Batch 250/654 - loss: 0.0047
+Training:  39%|███▉      | 254/654 [1:02:14<1:04:02,  9.61s/it]2024-12-24 20:42:11.040 | INFO     | __main__:train_with_distillation:358 - Batch 255/654 - loss: 0.0057
+Training:  40%|███▉      | 259/654 [1:03:29<1:02:39,  9.52s/it]2024-12-24 20:43:25.896 | INFO     | __main__:train_with_distillation:358 - Batch 260/654 - loss: 0.0036
+Training:  40%|████      | 264/654 [1:04:52<58:50,  9.05s/it]  2024-12-24 20:44:48.660 | INFO     | __main__:train_with_distillation:358 - Batch 265/654 - loss: 0.0037
+Training:  41%|████      | 269/654 [1:06:28<55:06,  8.59s/it]  2024-12-24 20:46:25.095 | INFO     | __main__:train_with_distillation:358 - Batch 270/654 - loss: 0.0038
+Training:  42%|████▏     | 274/654 [1:07:44<59:03,  9.32s/it]  2024-12-24 20:47:40.571 | INFO     | __main__:train_with_distillation:358 - Batch 275/654 - loss: 0.0034
+Training:  43%|████▎     | 278/654 [1:08:59<1:07:47, 10.82s/it]2024-12-24 20:48:56.183 | INFO     | __main__:train_with_distillation:358 - Batch 280/654 - loss: 0.0041
+Training:  43%|████▎     | 284/654 [1:10:09<53:33,  8.69s/it]  2024-12-24 20:50:06.105 | INFO     | __main__:train_with_distillation:358 - Batch 285/654 - loss: 0.0032
+Training:  44%|████▍     | 289/654 [1:11:25<50:26,  8.29s/it]  2024-12-24 20:51:21.965 | INFO     | __main__:train_with_distillation:358 - Batch 290/654 - loss: 0.0031
+Training:  45%|████▍     | 294/654 [1:12:45<44:05,  7.35s/it]  2024-12-24 20:52:42.505 | INFO     | __main__:train_with_distillation:358 - Batch 295/654 - loss: 0.0023
+Training:  46%|████▌     | 299/654 [1:14:00<52:44,  8.91s/it]  2024-12-24 20:53:56.815 | INFO     | __main__:train_with_distillation:358 - Batch 300/654 - loss: 0.0023
+Training:  46%|████▋     | 304/654 [1:15:02<47:32,  8.15s/it]  2024-12-24 20:54:58.562 | INFO     | __main__:train_with_distillation:358 - Batch 305/654 - loss: 0.0025
+Training:  47%|████▋     | 309/654 [1:16:18<52:32,  9.14s/it]  2024-12-24 20:56:14.792 | INFO     | __main__:train_with_distillation:358 - Batch 310/654 - loss: 0.0047
+Training:  48%|████▊     | 314/654 [1:17:25<43:57,  7.76s/it]2024-12-24 20:57:21.635 | INFO     | __main__:train_with_distillation:358 - Batch 315/654 - loss: 0.0050
+2024-12-24 20:58:38.738 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6247 at batch 315, model saved.
+Training:  49%|████▉     | 319/654 [1:18:43<39:25,  7.06s/it]2024-12-24 20:58:39.701 | INFO     | __main__:train_with_distillation:358 - Batch 320/654 - loss: 0.0063
+2024-12-24 20:59:58.570 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6374 at batch 320, model saved.
+Training:  50%|████▉     | 324/654 [1:20:02<38:38,  7.02s/it]2024-12-24 20:59:59.527 | INFO     | __main__:train_with_distillation:358 - Batch 325/654 - loss: 0.0051
+2024-12-24 21:01:06.790 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6384 at batch 325, model saved.
+Training:  50%|█████     | 329/654 [1:21:10<44:28,  8.21s/it]  2024-12-24 21:01:07.157 | INFO     | __main__:train_with_distillation:358 - Batch 330/654 - loss: 0.0045
+Training:  50%|█████     | 329/654 [1:21:29<44:28,  8.21s/it]2024-12-24 21:02:24.572 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6387 at batch 330, model saved.
+Training:  51%|█████     | 334/654 [1:22:28<49:44,  9.33s/it]  2024-12-24 21:02:24.945 | INFO     | __main__:train_with_distillation:358 - Batch 335/654 - loss: 0.0045
+Training:  52%|█████▏    | 339/654 [1:23:42<48:51,  9.31s/it]  2024-12-24 21:03:38.502 | INFO     | __main__:train_with_distillation:358 - Batch 340/654 - loss: 0.0038
+Training:  53%|█████▎    | 344/654 [1:25:08<47:50,  9.26s/it]  2024-12-24 21:05:04.928 | INFO     | __main__:train_with_distillation:358 - Batch 345/654 - loss: 0.0038
+Training:  53%|█████▎    | 349/654 [1:26:38<41:39,  8.20s/it]2024-12-24 21:06:34.926 | INFO     | __main__:train_with_distillation:358 - Batch 350/654 - loss: 0.0036
+Training:  54%|█████▍    | 354/654 [1:27:45<42:07,  8.42s/it]  2024-12-24 21:07:41.984 | INFO     | __main__:train_with_distillation:358 - Batch 355/654 - loss: 0.0033
+Training:  55%|█████▍    | 359/654 [1:29:03<46:19,  9.42s/it]  2024-12-24 21:09:00.165 | INFO     | __main__:train_with_distillation:358 - Batch 360/654 - loss: 0.0033
+Training:  56%|█████▌    | 364/654 [1:30:07<41:11,  8.52s/it]  2024-12-24 21:10:04.064 | INFO     | __main__:train_with_distillation:358 - Batch 365/654 - loss: 0.0031
+Training:  56%|█████▋    | 369/654 [1:31:20<38:15,  8.06s/it]2024-12-24 21:11:17.466 | INFO     | __main__:train_with_distillation:358 - Batch 370/654 - loss: 0.0031
+Training:  57%|█████▋    | 374/654 [1:32:42<34:31,  7.40s/it]2024-12-24 21:12:39.536 | INFO     | __main__:train_with_distillation:358 - Batch 375/654 - loss: 0.0037
+Training:  58%|█████▊    | 379/654 [1:33:56<40:33,  8.85s/it]  2024-12-24 21:13:53.034 | INFO     | __main__:train_with_distillation:358 - Batch 380/654 - loss: 0.0031
+Training:  59%|█████▊    | 384/654 [1:35:08<40:28,  8.99s/it]  2024-12-24 21:15:04.746 | INFO     | __main__:train_with_distillation:358 - Batch 385/654 - loss: 0.0024
+Training:  59%|█████▉    | 389/654 [1:36:08<35:28,  8.03s/it]2024-12-24 21:16:04.501 | INFO     | __main__:train_with_distillation:358 - Batch 390/654 - loss: 0.0025
+Training:  60%|██████    | 393/654 [1:37:20<43:26,  9.99s/it]  2024-12-24 21:17:17.384 | INFO     | __main__:train_with_distillation:358 - Batch 395/654 - loss: 0.0028
+Training:  61%|██████    | 399/654 [1:38:47<32:40,  7.69s/it]2024-12-24 21:18:44.112 | INFO     | __main__:train_with_distillation:358 - Batch 400/654 - loss: 0.0021
+Training:  62%|██████▏   | 404/654 [1:40:04<38:10,  9.16s/it]  2024-12-24 21:20:00.482 | INFO     | __main__:train_with_distillation:358 - Batch 405/654 - loss: 0.0026
+Training:  62%|██████▏   | 408/654 [1:41:12<43:47, 10.68s/it]2024-12-24 21:21:08.891 | INFO     | __main__:train_with_distillation:358 - Batch 410/654 - loss: 0.0025
+Training:  63%|██████▎   | 414/654 [1:42:28<36:30,  9.13s/it]2024-12-24 21:22:25.016 | INFO     | __main__:train_with_distillation:358 - Batch 415/654 - loss: 0.0028
+Training:  64%|██████▍   | 419/654 [1:43:44<33:04,  8.45s/it]2024-12-24 21:23:41.120 | INFO     | __main__:train_with_distillation:358 - Batch 420/654 - loss: 0.0027
+Training:  65%|██████▍   | 424/654 [1:45:13<30:23,  7.93s/it]2024-12-24 21:25:09.821 | INFO     | __main__:train_with_distillation:358 - Batch 425/654 - loss: 0.0023
+Training:  66%|██████▌   | 429/654 [1:46:28<34:19,  9.15s/it]2024-12-24 21:26:25.155 | INFO     | __main__:train_with_distillation:358 - Batch 430/654 - loss: 0.0025
+Training:  66%|██████▋   | 434/654 [1:47:32<30:46,  8.39s/it]2024-12-24 21:27:28.884 | INFO     | __main__:train_with_distillation:358 - Batch 435/654 - loss: 0.0024
+Training:  67%|██████▋   | 439/654 [1:48:49<33:12,  9.27s/it]2024-12-24 21:28:45.705 | INFO     | __main__:train_with_distillation:358 - Batch 440/654 - loss: 0.0020
+Training:  68%|██████▊   | 444/654 [1:50:02<29:02,  8.30s/it]2024-12-24 21:29:59.311 | INFO     | __main__:train_with_distillation:358 - Batch 445/654 - loss: 0.0060
+Training:  69%|██████▊   | 449/654 [1:51:32<27:18,  7.99s/it]2024-12-24 21:31:29.416 | INFO     | __main__:train_with_distillation:358 - Batch 450/654 - loss: 0.0021
+Training:  69%|██████▉   | 454/654 [1:52:53<32:03,  9.62s/it]2024-12-24 21:32:49.469 | INFO     | __main__:train_with_distillation:358 - Batch 455/654 - loss: 0.0021
+Training:  70%|███████   | 459/654 [1:53:58<28:08,  8.66s/it]2024-12-24 21:33:54.565 | INFO     | __main__:train_with_distillation:358 - Batch 460/654 - loss: 0.0020
+Training:  71%|███████   | 464/654 [1:55:14<29:23,  9.28s/it]2024-12-24 21:35:10.528 | INFO     | __main__:train_with_distillation:358 - Batch 465/654 - loss: 0.0023
+Training:  72%|███████▏  | 468/654 [1:56:18<30:10,  9.73s/it]2024-12-24 21:36:15.617 | INFO     | __main__:train_with_distillation:358 - Batch 470/654 - loss: 0.0025
+Training:  72%|███████▏  | 474/654 [1:57:47<23:07,  7.71s/it]2024-12-24 21:37:43.578 | INFO     | __main__:train_with_distillation:358 - Batch 475/654 - loss: 0.0023
+Training:  73%|███████▎  | 479/654 [1:59:08<28:02,  9.61s/it]2024-12-24 21:39:04.710 | INFO     | __main__:train_with_distillation:358 - Batch 480/654 - loss: 0.0023
+Training:  74%|███████▍  | 484/654 [2:00:11<24:06,  8.51s/it]2024-12-24 21:40:08.023 | INFO     | __main__:train_with_distillation:358 - Batch 485/654 - loss: 0.0017
+Training:  75%|███████▍  | 489/654 [2:01:31<26:11,  9.53s/it]2024-12-24 21:41:27.507 | INFO     | __main__:train_with_distillation:358 - Batch 490/654 - loss: 0.0016
+Training:  76%|███████▌  | 494/654 [2:02:43<22:09,  8.31s/it]2024-12-24 21:42:40.230 | INFO     | __main__:train_with_distillation:358 - Batch 495/654 - loss: 0.0017
+Training:  76%|███████▋  | 499/654 [2:04:04<19:06,  7.39s/it]2024-12-24 21:44:01.431 | INFO     | __main__:train_with_distillation:358 - Batch 500/654 - loss: 0.0018
+Training:  77%|███████▋  | 504/654 [2:05:31<25:09, 10.06s/it]2024-12-24 21:45:27.583 | INFO     | __main__:train_with_distillation:358 - Batch 505/654 - loss: 0.0018
+Training:  78%|███████▊  | 509/654 [2:06:38<21:41,  8.98s/it]2024-12-24 21:46:34.721 | INFO     | __main__:train_with_distillation:358 - Batch 510/654 - loss: 0.0021
+Training:  79%|███████▊  | 514/654 [2:07:55<22:11,  9.51s/it]2024-12-24 21:47:52.171 | INFO     | __main__:train_with_distillation:358 - Batch 515/654 - loss: 0.0021
+Training:  79%|███████▉  | 519/654 [2:09:03<19:56,  8.87s/it]2024-12-24 21:48:59.708 | INFO     | __main__:train_with_distillation:358 - Batch 520/654 - loss: 0.0027
+Training:  80%|███████▉  | 523/654 [2:10:32<25:52, 11.85s/it]2024-12-24 21:50:29.091 | INFO     | __main__:train_with_distillation:358 - Batch 525/654 - loss: 0.0083
+Training:  81%|████████  | 529/654 [2:11:59<21:37, 10.38s/it]2024-12-24 21:51:55.925 | INFO     | __main__:train_with_distillation:358 - Batch 530/654 - loss: 0.0022
+Training:  82%|████████▏ | 534/654 [2:13:06<18:19,  9.17s/it]2024-12-24 21:53:03.246 | INFO     | __main__:train_with_distillation:358 - Batch 535/654 - loss: 0.0027
+Training:  82%|████████▏ | 539/654 [2:14:17<17:18,  9.03s/it]2024-12-24 21:54:14.178 | INFO     | __main__:train_with_distillation:358 - Batch 540/654 - loss: 0.0032
+Training:  83%|████████▎ | 544/654 [2:15:25<16:01,  8.74s/it]2024-12-24 21:55:22.172 | INFO     | __main__:train_with_distillation:358 - Batch 545/654 - loss: 0.0097
+Training:  84%|████████▍ | 548/654 [2:16:44<19:07, 10.82s/it]2024-12-24 21:56:41.163 | INFO     | __main__:train_with_distillation:358 - Batch 550/654 - loss: 0.0033
+Training:  85%|████████▍ | 554/654 [2:18:13<13:24,  8.05s/it]2024-12-24 21:58:10.565 | INFO     | __main__:train_with_distillation:358 - Batch 555/654 - loss: 0.0027
+Training:  85%|████████▌ | 559/654 [2:19:25<13:50,  8.75s/it]2024-12-24 21:59:21.523 | INFO     | __main__:train_with_distillation:358 - Batch 560/654 - loss: 0.0020
+Training:  86%|████████▌ | 564/654 [2:20:46<14:38,  9.76s/it]2024-12-24 22:00:42.506 | INFO     | __main__:train_with_distillation:358 - Batch 565/654 - loss: 0.0021
+Training:  87%|████████▋ | 569/654 [2:21:54<12:45,  9.00s/it]2024-12-24 22:01:50.732 | INFO     | __main__:train_with_distillation:358 - Batch 570/654 - loss: 0.0019
+Training:  87%|████████▋ | 569/654 [2:22:12<12:45,  9.00s/it]2024-12-24 22:03:11.901 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6404 at batch 570, model saved.
+Training:  88%|████████▊ | 574/654 [2:23:16<11:47,  8.85s/it]2024-12-24 22:03:12.854 | INFO     | __main__:train_with_distillation:358 - Batch 575/654 - loss: 0.0022
+2024-12-24 22:04:40.831 | INFO     | __main__:train_with_distillation:364 - New best corrcoef: 0.6413 at batch 575, model saved.
+Training:  89%|████████▊ | 579/654 [2:24:45<10:02,  8.03s/it]2024-12-24 22:04:41.783 | INFO     | __main__:train_with_distillation:358 - Batch 580/654 - loss: 0.0015
+Training:  89%|████████▉ | 584/654 [2:25:50<09:35,  8.22s/it]2024-12-24 22:05:47.111 | INFO     | __main__:train_with_distillation:358 - Batch 585/654 - loss: 0.0021
+Training:  90%|█████████ | 589/654 [2:27:04<09:45,  9.01s/it]2024-12-24 22:07:01.326 | INFO     | __main__:train_with_distillation:358 - Batch 590/654 - loss: 0.0021
+Training:  91%|█████████ | 594/654 [2:28:10<08:31,  8.53s/it]2024-12-24 22:08:06.882 | INFO     | __main__:train_with_distillation:358 - Batch 595/654 - loss: 0.0017
+Training:  92%|█████████▏| 599/654 [2:29:26<07:35,  8.28s/it]2024-12-24 22:09:23.254 | INFO     | __main__:train_with_distillation:358 - Batch 600/654 - loss: 0.0019
+Training:  92%|█████████▏| 604/654 [2:31:05<07:09,  8.60s/it]2024-12-24 22:11:02.373 | INFO     | __main__:train_with_distillation:358 - Batch 605/654 - loss: 0.0017
+Training:  93%|█████████▎| 609/654 [2:32:22<07:04,  9.43s/it]2024-12-24 22:12:18.963 | INFO     | __main__:train_with_distillation:358 - Batch 610/654 - loss: 0.0018
+Training:  94%|█████████▍| 614/654 [2:33:38<06:22,  9.56s/it]2024-12-24 22:13:35.065 | INFO     | __main__:train_with_distillation:358 - Batch 615/654 - loss: 0.0019
+Training:  95%|█████████▍| 619/654 [2:34:49<05:21,  9.18s/it]2024-12-24 22:14:46.198 | INFO     | __main__:train_with_distillation:358 - Batch 620/654 - loss: 0.0016
+Training:  95%|█████████▌| 623/654 [2:36:08<05:42, 11.04s/it]2024-12-24 22:16:05.562 | INFO     | __main__:train_with_distillation:358 - Batch 625/654 - loss: 0.0016
+Training:  96%|█████████▌| 629/654 [2:37:42<03:28,  8.36s/it]2024-12-24 22:17:39.355 | INFO     | __main__:train_with_distillation:358 - Batch 630/654 - loss: 0.0015
+Training:  97%|█████████▋| 634/654 [2:38:58<03:04,  9.22s/it]2024-12-24 22:18:54.505 | INFO     | __main__:train_with_distillation:358 - Batch 635/654 - loss: 0.0013
+Training:  98%|█████████▊| 639/654 [2:40:15<02:23,  9.56s/it]2024-12-24 22:20:11.463 | INFO     | __main__:train_with_distillation:358 - Batch 640/654 - loss: 0.0014
+Training:  98%|█████████▊| 644/654 [2:41:22<01:28,  8.84s/it]2024-12-24 22:21:18.605 | INFO     | __main__:train_with_distillation:358 - Batch 645/654 - loss: 0.0016
+Training:  99%|█████████▉| 649/654 [2:42:40<00:42,  8.51s/it]2024-12-24 22:22:36.839 | INFO     | __main__:train_with_distillation:358 - Batch 650/654 - loss: 0.0013
+Training: 100%|█████████▉| 653/654 [2:44:00<00:10, 10.17s/it]2024-12-24 22:23:56.648 | INFO     | __main__:train_with_distillation:358 - Batch 654/654 - loss: 0.0020
+Training: 100%|██████████| 654/654 [2:45:17<00:00, 15.16s/it]
+
+Process finished with exit code 0
